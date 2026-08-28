@@ -1,2 +1,2 @@
 # ElectronicShopping
-Automation testing for Electronics store [Mobiles,Labptobs,TVs]
+Automation testing using Playwright(Java) for Electronics store [Mobiles,Labptobs,TVs]
