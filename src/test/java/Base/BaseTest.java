@@ -48,6 +48,7 @@ public class BaseTest {
         context=browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
         page=context.newPage();
         page.waitForTimeout(5000);
+        page.navigate("https://shop.qaautomationlabs.com/index.php");
         FileReader f=new FileReader("C:\\Users\\l e n o v o\\IdeaProjects\\Electronicsstore\\src\\test\\resources\\info.json");
         JSONParser j=new JSONParser();
         Object o=j.parse(f);
@@ -68,6 +69,7 @@ public class BaseTest {
         city=(String)payinfo.get("city");
         state=(String)payinfo.get("State");
         pincode=(String)payinfo.get("pincode");
+
 
     }
 

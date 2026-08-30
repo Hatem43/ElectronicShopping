@@ -20,7 +20,6 @@ public class MobilesTest extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod(Method method) {
-        page.navigate("https://shop.qaautomationlabs.com/index.php");
         login=new Loginpage(page);
         login.loginvalid(email, password);
         extent = ExtentManager.getExtent();

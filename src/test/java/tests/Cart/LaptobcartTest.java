@@ -22,13 +22,11 @@ public class LaptobcartTest extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod(Method method) {
-        page.navigate("https://shop.qaautomationlabs.com/index.php");
         login = new Loginpage(page);
         login.loginvalid(email, password);
         extent = ExtentManager.getExtent();
         test = extent.createTest(method.getName());
         home=new HomePage(page);
-        home = new HomePage(page);
         home.checkhomepageurl();
         home.gotoelectoronicsshoppingpage();
         laptob=new Laptobproducts(page);

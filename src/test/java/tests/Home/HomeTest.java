@@ -22,7 +22,6 @@ public class HomeTest extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod(Method method) {
-        page.navigate("https://shop.qaautomationlabs.com/index.php");
         loginpage=new Loginpage(page);
         loginpage.loginvalid(email,password);
         homepage=new HomePage(page);
