@@ -42,7 +42,7 @@ public class TVTest extends BaseTest {
     }
 
     @Test
-    public void checkproductdetails(){
+    public void checkTVdetails(){
         Tv.viewTVproductdetails();
     }
 
@@ -64,7 +64,7 @@ public class TVTest extends BaseTest {
     }
 
     @Test
-    public void checktvfilteration(){
+    public void checkTVfilteration(){
         boolean isfilterd=Tv.filterbyprice();
         Assert.assertTrue(isfilterd);
     }

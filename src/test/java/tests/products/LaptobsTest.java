@@ -38,18 +38,18 @@ public class LaptobsTest extends BaseTest {
     }
 
     @Test
-    public void checkproductsdetails() {
+    public void checklaptobsdetails() {
         laptob.viewlaptobproductsdetails();
     }
 
     @Test
-    public void checkproductsearch() {
+    public void checklaptobsearch() {
         boolean actualresult=laptob.searchLaptobproduct("Samsung Laptop");
         Assert.assertTrue(actualresult);
     }
 
     @Test
-    public void checkproductsortingfromAtoZ(){
+    public void checklaptobsortingfromAtoZ(){
         boolean issorted=laptob.sortlaptobsfromAtoZ();
         Assert.assertTrue(issorted);
     }
@@ -61,13 +61,13 @@ public class LaptobsTest extends BaseTest {
     }
 
     @Test
-    public void checkproductsortingfromLowtoHigh(){
+    public void checklaptobsortingfromLowtoHigh(){
         boolean issorted=laptob.sortLaptopsFromLowToHigh();
         Assert.assertTrue(issorted);
     }
 
     @Test
-    public void checkproductsortingfromHightoLow(){
+    public void checklaptobsortingfromHightoLow(){
         boolean issorted=laptob.sortLaptopsFromHighToLow();
         Assert.assertTrue(issorted);
     }

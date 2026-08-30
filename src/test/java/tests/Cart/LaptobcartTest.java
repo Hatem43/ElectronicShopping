@@ -37,7 +37,7 @@ public class LaptobcartTest extends BaseTest {
     }
 
     @Test(priority=0)
-    public void checkCartoneproduct(){
+    public void checkaddonelabtobtoCart(){
         laptob.addLaptobtocart();
         laptob.gotocart();
         boolean actual=cart.checkcartlistonelaptob();
@@ -47,7 +47,7 @@ public class LaptobcartTest extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void checksameproductmultipletimestocart(){
+    public void checkaddsamelaptobmultipletimestocart(){
         int productprice=laptob.getproductprice();
         laptob.addLaptobtwotimestocart();
         laptob.gotocart();
@@ -61,7 +61,7 @@ public class LaptobcartTest extends BaseTest {
 
 
     @Test(priority = 2)
-    public void checkcartwodifferentlaptobs(){
+    public void checkaddcartwodifferentlaptobstocart(){
         laptob.addtwodifferentlaptobstocart();
         laptob.gotocart();
         boolean actual=cart.checkcarttwodifferentlaptobs();

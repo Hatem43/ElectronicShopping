@@ -38,7 +38,7 @@ public class TVcartTest extends BaseTest {
     }
 
     @Test(priority=0)
-    public void checkCartoneproduct(){
+    public void checkCartoneTV(){
         int productprice= TV.getproductprice();
         TV.addTVtocart();
         TV.gotocart();
@@ -51,7 +51,7 @@ public class TVcartTest extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void checksameproductmultipletimestocart(){
+    public void checkaddsameTVmultipletimestocart(){
         TV.addTvtwotimestocart();
         TV.gotocart();
         int actual=cart.checkcartlisttwosameTVs();
@@ -62,7 +62,7 @@ public class TVcartTest extends BaseTest {
 
 
     @Test(priority = 2)
-    public void checkcarttwodifferentTVstwocart(){
+    public void checkaddtwodifferentTVstocart(){
         TV.addtwodifferentTvstocart();
         TV.gotocart();
         boolean actual=cart.checkcarttwodifferentTVs();

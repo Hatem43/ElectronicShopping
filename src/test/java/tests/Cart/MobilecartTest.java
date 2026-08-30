@@ -37,7 +37,7 @@ public class MobilecartTest extends BaseTest {
     }
 
     @Test(priority=0)
-    public void checkCartoneproduct(){
+    public void checkaddonemobiletoCart(){
         int productprice=mobile.getproductprice();
         mobile.addmobiletocart();
         mobile.gotocart();
@@ -50,7 +50,7 @@ public class MobilecartTest extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void checksameproductmultipletimestocart(){
+    public void checkaddsamemobilemultipletimestocart(){
         mobile.addsamemobilestwotimestocart();
         mobile.gotocart();
         int actual=cart.checkcartlisttwosamemobiles();
@@ -60,7 +60,7 @@ public class MobilecartTest extends BaseTest {
     }
 
     @Test(priority = 2)
-    public void checkacarttwodifferentmobiles(){
+    public void checkaddtwodifferentmobiletocart(){
         mobile.addtwodifferentmobilestocart();
         mobile.gotocart();
         boolean actual=cart.checkcarttwodifferentmobiles();

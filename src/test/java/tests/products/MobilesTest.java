@@ -50,26 +50,26 @@ public class MobilesTest extends BaseTest {
     }
 
     @Test
-    public void checkproductsortingfromAtoZ(){
+    public void checkmobilesortingfromAtoZ(){
         boolean issorted=mobile.sortmobilesfromAtoZ();
         Assert.assertTrue(issorted);
     }
 
      @Test
-    public void checkproductsortingfromZtoA(){
+    public void checkmobilesortingfromZtoA(){
         boolean issorted=mobile.sortmobilesfromZtoA();
         Assert.assertTrue(issorted);
     }
 
     @Test
-    public void checkproductsortingfromLowtoHigh(){
+    public void checkmobilesortingfromLowtoHigh(){
         boolean issorted=mobile.sortMobilesFromLowToHigh();
         Assert.assertTrue(issorted);
     }
 
 
     @Test
-    public void checkproductsortingfromHightoLow(){
+    public void checkmobilesortingfromHightoLow(){
         boolean issorted=mobile.sortMobilesFromHighToLow();
         Assert.assertTrue(issorted);
     }
@@ -77,7 +77,7 @@ public class MobilesTest extends BaseTest {
 
 
     @Test
-    public void checkfilteration(){
+    public void checkmobilefilteration(){
         boolean isfiltered=mobile.filterbyprice();
         Assert.assertTrue(isfiltered);
     }
