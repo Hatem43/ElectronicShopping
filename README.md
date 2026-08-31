@@ -1,2 +1,2 @@
 # ElectronicShopping
-Automation testing for Electronics store using Playwright(Java)
+Automation testing for Electronics shopping using Playwright(Java)
