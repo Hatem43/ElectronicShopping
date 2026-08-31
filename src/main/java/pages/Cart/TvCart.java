@@ -123,4 +123,10 @@ public class TvCart extends Loginpage {
         return cartprice;
     }
 
+    public int gettotalproductcartprice(){
+        Locator productcartprice=page.locator(TVtotalprice);
+        int totalcartprice=Integer.parseInt(productcartprice.innerText().replaceAll("[^0-9]", ""));
+        return totalcartprice;
+    }
+
 }

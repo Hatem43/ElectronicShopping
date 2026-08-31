@@ -44,6 +44,7 @@ public class LaptobcartTest extends BaseTest {
         Assert.assertTrue(actual_result);
     }
 
+
     @Test(priority = 1)
     public void checkaddsamelaptobmultipletimestocart(){
         int productprice=laptob.getproductprice();
@@ -53,10 +54,11 @@ public class LaptobcartTest extends BaseTest {
         Assert.assertEquals(cartproductprice,productprice);
         int actual=cart.checkcartlisttwosamelabtops();
         Assert.assertEquals(actual,2);
+        int actaultotalprice=cart.gettotalproductcartprice();
+        Assert.assertEquals(actaultotalprice,198);
         boolean actual_result=cart.emptyproductscart();
         Assert.assertTrue(actual_result);
     }
-
 
     @Test(priority = 2)
     public void checkaddcartwodifferentlaptobstocart(){
@@ -67,6 +69,8 @@ public class LaptobcartTest extends BaseTest {
         boolean actual_result=cart.emptyproductscart();
         Assert.assertTrue(actual_result);
     }
+
+
 
     @AfterMethod
     public void logout(ITestResult result) {

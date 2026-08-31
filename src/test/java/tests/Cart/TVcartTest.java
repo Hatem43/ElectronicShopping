@@ -54,10 +54,11 @@ public class TVcartTest extends BaseTest {
         TV.gotocart();
         int actual=cart.checkcartlisttwosameTVs();
         Assert.assertEquals(actual,2);
+        int actaultotalprice=cart.gettotalproductcartprice();
+        Assert.assertEquals(actaultotalprice,800);
         boolean actual_result=cart.emptyproductscart();
         Assert.assertTrue(actual_result);
     }
-
 
     @Test(priority = 2)
     public void checkaddtwodifferentTVstocart(){
@@ -68,6 +69,7 @@ public class TVcartTest extends BaseTest {
         boolean actual_result=cart.emptyproductscart();
         Assert.assertTrue(actual_result);
     }
+
 
 
     @AfterMethod

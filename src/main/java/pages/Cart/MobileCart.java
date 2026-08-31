@@ -17,7 +17,6 @@ public class MobileCart extends Loginpage {
     boolean isempty;
     int quantity=0;
     String message="//td[@class='align-middle text-center']";
-    String emptymessag;
     boolean found;
 
     public MobileCart(Page page) {
@@ -121,5 +120,12 @@ public class MobileCart extends Loginpage {
         int cartprice=Integer.parseInt(productcartprice.innerText().replaceAll("[^0-9]", ""));
         return cartprice;
     }
+
+    public int gettotalproductcartprice(){
+        Locator productcartprice=page.locator(mobiletotalprice);
+        int totalcartprice=Integer.parseInt(productcartprice.innerText().replaceAll("[^0-9]", ""));
+        return totalcartprice;
+    }
+
 
 }

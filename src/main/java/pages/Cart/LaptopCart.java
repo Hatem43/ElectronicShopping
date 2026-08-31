@@ -120,5 +120,11 @@ public class LaptopCart extends Loginpage {
         return cartprice;
     }
 
+    public int gettotalproductcartprice(){
+        Locator productcartprice=page.locator(laptobtotalprice);
+        int totalcartprice=Integer.parseInt(productcartprice.innerText().replaceAll("[^0-9]", ""));
+        return totalcartprice;
+    }
+
 
 }
