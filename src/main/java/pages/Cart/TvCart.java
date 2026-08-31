@@ -47,7 +47,7 @@ public class TvCart extends Loginpage {
         return found;
     }
 
-    public int checkcartlisttwosameTVs(){
+    public int addsameTVstwotimestimes(){
         Locator cartist=page.locator(Tvscartlist);
         if(cartist.all().isEmpty()){
             found=false;

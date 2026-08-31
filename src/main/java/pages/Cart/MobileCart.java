@@ -46,7 +46,7 @@ public class MobileCart extends Loginpage {
           return found;
     }
 
-    public int checkcartlisttwosamemobiles(){
+    public int addsammobilestwotimes(){
         Locator cartist=page.locator(mobilescartlist);
         if(cartist.all().isEmpty()){
             found=false;

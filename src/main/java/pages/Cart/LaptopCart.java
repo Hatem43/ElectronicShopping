@@ -45,7 +45,7 @@ public class LaptopCart extends Loginpage {
         return found;
     }
 
-    public int checkcartlisttwosamelabtops(){
+    public int addsamelaptobstwotimes(){
         Locator cartist=page.locator(laptobsscartlist);
         if(cartist.all().isEmpty()){
             found=false;
