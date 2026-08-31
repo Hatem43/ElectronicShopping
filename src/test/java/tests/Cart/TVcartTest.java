@@ -35,7 +35,6 @@ public class TVcartTest extends BaseTest {
         cart = new TvCart(page);
     }
 
-/*
     @Test(priority=0)
     public void checkCartoneTV(){
         int productprice= TV.getproductprice();
@@ -49,8 +48,6 @@ public class TVcartTest extends BaseTest {
         Assert.assertTrue(actual_result);
     }
 
-
- */
     @Test(priority = 1)
     public void checkaddsameTVmultipletimestocart(){
         int productprice=TV.getproductprice();
@@ -65,7 +62,7 @@ public class TVcartTest extends BaseTest {
         boolean actual_result=cart.emptyproductscart();
         Assert.assertTrue(actual_result);
     }
-/*
+
     @Test(priority = 2)
     public void checkaddtwodifferentTVstocart(){
         TV.addtwodifferentTvstocart();
@@ -75,10 +72,6 @@ public class TVcartTest extends BaseTest {
         boolean actual_result=cart.emptyproductscart();
         Assert.assertTrue(actual_result);
     }
-
-
-
- */
 
     @AfterMethod
     public void logout(ITestResult result) {

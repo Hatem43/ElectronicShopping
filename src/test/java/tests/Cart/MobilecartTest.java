@@ -33,7 +33,7 @@ public class MobilecartTest extends BaseTest {
         mobile.gotomobilespage();
         cart = new MobileCart(page);
     }
-/*
+
     @Test(priority=0)
     public void checkaddonemobiletoCart(){
         int productprice=mobile.getproductprice();
@@ -47,8 +47,6 @@ public class MobilecartTest extends BaseTest {
         Assert.assertTrue(actual_result);
     }
 
-
- */
 
 
     @Test(priority = 1)
@@ -65,7 +63,7 @@ public class MobilecartTest extends BaseTest {
         boolean actual_result=cart.emptyproductscart();
         Assert.assertTrue(actual_result);
     }
-/*
+
     @Test(priority = 2)
     public void checkaddtwodifferentmobiletocart(){
         mobile.addtwodifferentmobilestocart();
@@ -76,9 +74,6 @@ public class MobilecartTest extends BaseTest {
         Assert.assertTrue(actual_result);
     }
 
-
-
- */
 
     @AfterMethod
     public void logout(ITestResult result) {
