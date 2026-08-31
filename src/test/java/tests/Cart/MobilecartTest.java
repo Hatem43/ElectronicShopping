@@ -50,7 +50,7 @@ public class MobilecartTest extends BaseTest {
 
 
     @Test(priority = 1)
-    public void checkaddsamemobilemultipletimestocart(){
+    public void checkaddsamemobiletwotimestocart(){
         int productprice=mobile.getproductprice();
         mobile.addsamemobilestwotimestocart();
         mobile.gotocart();

@@ -49,7 +49,7 @@ public class TVcartTest extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void checkaddsameTVmultipletimestocart(){
+    public void checkaddsameTVtwotimestocart(){
         int productprice=TV.getproductprice();
         TV.addTvtwotimestocart();
         TV.gotocart();

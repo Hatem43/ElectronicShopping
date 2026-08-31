@@ -46,7 +46,7 @@ public class LaptobcartTest extends BaseTest {
 
 
     @Test(priority = 1)
-    public void checkaddsamelaptobmultipletimestocart(){
+    public void checkaddsamelaptobtwotimestocart(){
         int productprice=laptob.getproductprice();
         laptob.addLaptobtwotimestocart();
         laptob.gotocart();
