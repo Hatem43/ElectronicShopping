@@ -17,7 +17,6 @@ public class TVTest extends BaseTest {
 
     public Loginpage login;
     public HomePage home;
-    public Laptobproducts laptob;
     public TVproducts Tv;
 
     @BeforeMethod
