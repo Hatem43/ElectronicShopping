@@ -24,15 +24,15 @@ public class MobileCart extends Loginpage {
     }
 
       public boolean checkcartlistonemobile(){
-          Locator cartist=page.locator(mobilescartlist);
-          if(cartist.all().isEmpty()){
+          Locator cartlist=page.locator(mobilescartlist);
+          if(cartlist.all().isEmpty()){
               found=false;
               System.out.println("No Mobiles in cart");
           }
 
           else {
               found=true;
-              for(Locator mobile:cartist.all()){
+              for(Locator mobile:cartlist.all()){
                   Locator mobile_name=mobile.locator(mobilename);
                   System.out.println("the mobile name is "+ mobile_name.innerText());
                   Locator mobile_price=mobile.locator(mobileprice);
@@ -47,14 +47,14 @@ public class MobileCart extends Loginpage {
     }
 
     public int addsammobilestwotimes(){
-        Locator cartist=page.locator(mobilescartlist);
-        if(cartist.all().isEmpty()){
+        Locator cartlist=page.locator(mobilescartlist);
+        if(cartlist.all().isEmpty()){
             found=false;
             System.out.println("No Mobiles in cart");
         }
         else {
             found=true;
-            for(Locator mobile:cartist.all()){
+            for(Locator mobile:cartlist.all()){
                 Locator mobile_name=mobile.locator(mobilename);
                 System.out.println("the mobile name is "+ mobile_name.innerText());
                 Locator mobile_price=mobile.locator(mobileprice);
@@ -70,8 +70,8 @@ public class MobileCart extends Loginpage {
     }
 
     public boolean emptyproductscart() {
-        Locator cartist = page.locator(mobilescartlist);
-        if(cartist.count()>0) {
+        Locator cartlist = page.locator(mobilescartlist);
+        if(cartlist.count()>0) {
             Locator removeButtons = page.locator("[data-testid^='cart-remove-']");
             while (removeButtons.count() > 0) {
                 removeButtons.first().click();
@@ -83,21 +83,25 @@ public class MobileCart extends Loginpage {
                 isempty = false;
             }
         }
+        else{
+            isempty=true;
+            System.out.println("the cart is already empty");
+        }
         return isempty;
     }
 
 
     public boolean checkcarttwodifferentmobiles(){
-        Locator cartist=page.locator(mobilescartlist);
-        if(cartist.all().isEmpty()){
+        Locator cartlist=page.locator(mobilescartlist);
+        if(cartlist.all().isEmpty()){
             found=false;
             System.out.println("No Mobiles in cart");
         }
 
         else{
              found=true;
-             for(int i=0;i<cartist.count();i++){
-                 Locator mobile=cartist.nth(i);
+             for(int i=0;i<cartlist.count();i++){
+                 Locator mobile=cartlist.nth(i);
                Locator mobile_name=mobile.locator(mobilename);
                System.out.println("the mobile name is "+ mobile_name.innerText());
                Locator mobile_price=mobile.locator(mobileprice);

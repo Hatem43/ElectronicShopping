@@ -25,15 +25,15 @@ public class TvCart extends Loginpage {
     }
 
     public boolean checkcartlistoneTV(){
-        Locator cartist=page.locator(Tvscartlist);
-        if(cartist.all().isEmpty()){
+        Locator cartlist=page.locator(Tvscartlist);
+        if(cartlist.all().isEmpty()){
             found=false;
             System.out.println("No TV in cart");
         }
 
         else {
             found=true;
-            for(Locator TV:cartist.all()){
+            for(Locator TV:cartlist.all()){
                 Locator TV_name=TV.locator(TVname);
                 System.out.println("the TV name is "+ TV_name.innerText());
                 Locator TV_price=TV.locator(TVprice);
@@ -48,14 +48,14 @@ public class TvCart extends Loginpage {
     }
 
     public int addsameTVstwotimestimes(){
-        Locator cartist=page.locator(Tvscartlist);
-        if(cartist.all().isEmpty()){
+        Locator cartlist=page.locator(Tvscartlist);
+        if(cartlist.all().isEmpty()){
             found=false;
             System.out.println("No TVs in cart");
         }
         else {
             found=true;
-            for(Locator TV:cartist.all()){
+            for(Locator TV:cartlist.all()){
                 Locator TV_name=TV.locator(TVname);
                 System.out.println("the TV name is "+ TV_name.innerText());
                 Locator TV_price=TV.locator(TVprice);
@@ -71,16 +71,16 @@ public class TvCart extends Loginpage {
     }
 
     public boolean checkcarttwodifferentTVs(){
-        Locator cartist=page.locator(Tvscartlist);
-        if(cartist.all().isEmpty()){
+        Locator cartlist=page.locator(Tvscartlist);
+        if(cartlist.all().isEmpty()){
             found=false;
             System.out.println("No TVs in cart");
         }
 
         else{
             found=true;
-            for(int i=0;i<cartist.count();i++){
-                Locator TV=cartist.nth(i);
+            for(int i=0;i<cartlist.count();i++){
+                Locator TV=cartlist.nth(i);
                 Locator TV_name=TV.locator(TVname);
                 System.out.println("the TV name is "+ TV_name.innerText());
                 Locator TV_price=TV.locator(TVprice);
@@ -95,8 +95,8 @@ public class TvCart extends Loginpage {
     }
 
     public boolean emptyproductscart() {
-        Locator cartist = page.locator(Tvscartlist);
-        if(cartist.count()>0) {
+        Locator cartlist = page.locator(Tvscartlist);
+        if(cartlist.count()>0) {
             Locator removeButtons = page.locator("[data-testid^='cart-remove-']");
             while (removeButtons.count() > 0) {
                 removeButtons.first().click();
@@ -107,6 +107,10 @@ public class TvCart extends Loginpage {
             else {
                 isempty = false;
             }
+        }
+        else{
+            isempty=true;
+            System.out.println("the cart is already empty");
         }
         return isempty;
     }

@@ -23,15 +23,15 @@ public class LaptopCart extends Loginpage {
 
 
     public boolean checkcartlistonelaptob(){
-        Locator cartist=page.locator(laptobsscartlist);
-        if(cartist.all().isEmpty()){
+        Locator cartlist=page.locator(laptobsscartlist);
+        if(cartlist.all().isEmpty()){
             found=false;
             System.out.println("No Laptobs in cart");
         }
 
         else {
             found=true;
-            for(Locator laptob:cartist.all()){
+            for(Locator laptob:cartlist.all()){
                 Locator laptob_name=laptob.locator(laptobname);
                 System.out.println("the labtop name is "+ laptob_name.innerText());
                 Locator laptob_price=laptob.locator(laptobprice);
@@ -46,14 +46,14 @@ public class LaptopCart extends Loginpage {
     }
 
     public int addsamelaptobstwotimes(){
-        Locator cartist=page.locator(laptobsscartlist);
-        if(cartist.all().isEmpty()){
+        Locator cartlist=page.locator(laptobsscartlist);
+        if(cartlist.all().isEmpty()){
             found=false;
             System.out.println("No Laptobs in cart");
         }
         else {
             found=true;
-            for(Locator laptob:cartist.all()){
+            for(Locator laptob:cartlist.all()){
                 Locator laptob_name=laptob.locator(laptobname);
                 System.out.println("the laptob name is "+ laptob_name.innerText());
                 Locator laptob_price=laptob.locator(laptobprice);
@@ -69,8 +69,8 @@ public class LaptopCart extends Loginpage {
     }
 
     public boolean emptyproductscart() {
-        Locator cartist = page.locator(laptobsscartlist);
-        if(cartist.count()>0) {
+        Locator cartlist = page.locator(laptobsscartlist);
+        if(cartlist.count()>0) {
             Locator removeButtons = page.locator("[data-testid^='cart-remove-']");
             while (removeButtons.count() > 0) {
                 removeButtons.first().click();
@@ -82,20 +82,24 @@ public class LaptopCart extends Loginpage {
                 isempty = false;
             }
         }
+        else{
+            isempty=true;
+            System.out.println("the cart is already empty");
+        }
         return isempty;
     }
 
     public boolean checkcarttwodifferentlaptobs(){
-        Locator cartist=page.locator(laptobsscartlist);
-        if(cartist.all().isEmpty()){
+        Locator cartlist=page.locator(laptobsscartlist);
+        if(cartlist.all().isEmpty()){
             found=false;
             System.out.println("No Laptobs in cart");
         }
 
         else{
             found=true;
-            for(int i=0;i<cartist.count();i++){
-                Locator laptob=cartist.nth(i);
+            for(int i=0;i<cartlist.count();i++){
+                Locator laptob=cartlist.nth(i);
                 Locator laptob_name=laptob.locator(laptobname);
                 System.out.println("the laptob name is "+ laptob_name.innerText());
                 Locator laptob_price=laptob.locator(laptobprice);
