@@ -1,1 +1,0 @@
-{"uuid":"5e52349c-0ab7-4fac-a796-9fb14b585e48","name":"tests.products.TVTest.logout","children":["07355566-91e7-4706-bb0c-b4e6daac3b8e"],"description":"","befores":[],"afters":[{"name":"logout","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1789759071791,"stop":1789759073578}],"start":1789759071791,"stop":1789759073578}
