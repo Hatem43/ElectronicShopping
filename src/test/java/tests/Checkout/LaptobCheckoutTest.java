@@ -1,6 +1,8 @@
 package tests.Checkout;
 
 import Base.BaseTest;
+import io.qameta.allure.internal.shadowed.jackson.databind.JsonNode;
+import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -16,6 +18,8 @@ import pages.products.Laptobproducts;
 import pages.products.mobileproducts;
 import utils.ExtentManager;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 
 public class LaptobCheckoutTest extends BaseTest {
@@ -27,7 +31,20 @@ public class LaptobCheckoutTest extends BaseTest {
     public LaptobCheckout checkout;
 
     @BeforeMethod
-    public void beforeMethod(Method method) {
+    public void beforeMethod(Method method) throws IOException {
+
+        ObjectMapper map=new ObjectMapper();
+        JsonNode laptobinfo=map.readTree(new File("src/test/resources/Laptobpaymentinfo.json"));
+        FirstName=laptobinfo.get("name").asText();
+        MiddleName=laptobinfo.get("middlename").asText();
+        lastName=laptobinfo.get("lastname").asText();
+        Email=laptobinfo.get("Email").asText();
+        Mobilephone=laptobinfo.get("MobilePhone").asInt();
+        address=laptobinfo.get("address").asText();
+        city=laptobinfo.get("city").asText();
+        state=laptobinfo.get("State").asText();
+        pincode=laptobinfo.get("pincode").asInt();
+
         login = new Loginpage(page);
         login.loginvalid(email, password);
         extent = ExtentManager.getExtent();

@@ -1,6 +1,8 @@
 package tests.Checkout;
 
 import Base.BaseTest;
+import io.qameta.allure.internal.shadowed.jackson.databind.JsonNode;
+import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -13,6 +15,8 @@ import pages.Login.Loginpage;
 import pages.products.mobileproducts;
 import utils.ExtentManager;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 
 public class MobileCheckoutTest extends BaseTest {
@@ -24,7 +28,21 @@ public class MobileCheckoutTest extends BaseTest {
     public MobileCheckout checkout;
 
     @BeforeMethod
-    public void beforeMethod(Method method) {
+    public void beforeMethod(Method method) throws IOException {
+
+        ObjectMapper map=new ObjectMapper();
+        JsonNode node=map.readTree(new File("src/test/resources/Mobilepaymentinfo.json"));
+        FirstName=node.get("name").asText();
+        MiddleName=node.get("middlename").asText();
+        lastName=node.get("lastname").asText();
+        Email=node.get("Email").asText();
+        Mobilephone=node.get("MobilePhone").asInt();
+        address=node.get("address").asText();
+        city=node.get("city").asText();
+        state=node.get("State").asText();
+        pincode=node.get("pincode").asInt();
+
+
         login = new Loginpage(page);
         login.loginvalid(email, password);
         extent = ExtentManager.getExtent();
@@ -46,7 +64,7 @@ public class MobileCheckoutTest extends BaseTest {
 
     @Test
     public void CheckoutTest() {
-        checkout.enterpaymentinfo(FirstName,MiddleName,lastName,Email,Integer.parseInt(Mobilephone),address,state,city,Integer.parseInt(pincode));
+        checkout.enterpaymentinfo(FirstName,MiddleName,lastName,Email,Mobilephone,address,state,city,pincode);
         String message=checkout.placeorder();
         Assert.assertEquals(message,"Your order has been placed successfully.");
     }
