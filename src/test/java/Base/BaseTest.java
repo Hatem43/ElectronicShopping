@@ -49,14 +49,14 @@ public class BaseTest {
         page=context.newPage();
         page.waitForTimeout(5000);
         page.navigate("https://shop.qaautomationlabs.com/index.php");
-        FileReader f=new FileReader("C:\\Users\\l e n o v o\\IdeaProjects\\Electronicsstore\\src\\test\\resources\\info.json");
+        FileReader f=new FileReader("src/test/resources/info.json");
         JSONParser j=new JSONParser();
         Object o=j.parse(f);
         JSONObject Info=(JSONObject) o;
         email=(String)Info.get("email");
         password=(String)Info.get("password");
 
-        FileReader mobileinfo=new FileReader("C:\\Users\\l e n o v o\\IdeaProjects\\Electronicsstore\\src\\test\\resources\\Mobilepaymentinfo.json");
+        FileReader mobileinfo=new FileReader("src/test/resources/Mobilepaymentinfo.json");
         JSONParser jp=new JSONParser();
         Object ob=jp.parse(mobileinfo);
         JSONObject payinfo=(JSONObject) ob;
@@ -69,8 +69,6 @@ public class BaseTest {
         city=(String)payinfo.get("city");
         state=(String)payinfo.get("State");
         pincode=(String)payinfo.get("pincode");
-
-
     }
 
     @AfterSuite
